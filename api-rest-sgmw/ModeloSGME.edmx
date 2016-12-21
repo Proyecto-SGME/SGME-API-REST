@@ -588,9 +588,7 @@
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
-        <Function Name="Sp_Envia_Lat_Lng_App" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="usuario_rut" Type="int" Mode="In" />
-        </Function>
+        <Function Name="Sp_Envia_Lat_Lng_App" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -1650,7 +1648,6 @@
           <FunctionImport Name="Sp_Carga_Grilla_Listado_Tipos_Usuarios" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Carga_Grilla_Listado_Tipos_Usuarios_Result)" />
           <FunctionImport Name="Sp_Carga_Grilla_Ubicaciones" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Carga_Grilla_Ubicaciones_Result)" />
           <FunctionImport Name="Sp_Envia_Lat_Lng_App" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Envia_Lat_Lng_App_Result)">
-          <Parameter Name="usuario_rut" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Sp_Lista_Eventos_Estado" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Lista_Eventos_Estado_Result)">
           <Parameter Name="id_evento" Mode="In" Type="Int32" />

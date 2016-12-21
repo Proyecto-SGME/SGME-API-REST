@@ -515,13 +515,9 @@ namespace api_rest_sgmw
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_Carga_Grilla_Ubicaciones_Result>("Sp_Carga_Grilla_Ubicaciones");
         }
     
-        public virtual ObjectResult<Sp_Envia_Lat_Lng_App_Result> Sp_Envia_Lat_Lng_App(Nullable<int> usuario_rut)
+        public virtual ObjectResult<Sp_Envia_Lat_Lng_App_Result> Sp_Envia_Lat_Lng_App()
         {
-            var usuario_rutParameter = usuario_rut.HasValue ?
-                new ObjectParameter("usuario_rut", usuario_rut) :
-                new ObjectParameter("usuario_rut", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_Envia_Lat_Lng_App_Result>("Sp_Envia_Lat_Lng_App", usuario_rutParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_Envia_Lat_Lng_App_Result>("Sp_Envia_Lat_Lng_App");
         }
     
         public virtual ObjectResult<Sp_Lista_Eventos_Estado_Result> Sp_Lista_Eventos_Estado(Nullable<int> id_evento)
