@@ -1523,7 +1523,7 @@
             <Parameter Name="Flag" Mode="In" Type="Int32" />
             <Parameter Name="ddlFlag" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="Sp_Carga_Grilla_Detalles_Eventos" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Carga_Grilla_Detalles_Eventos_Result)">
+          <FunctionImport Name="getDetalleEvento" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.getDetalleEvento_Result)">
           <Parameter Name="id_evento" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_creatediagram">
@@ -1688,6 +1688,7 @@
           </FunctionImport>
           <FunctionImport Name="Sp_Lista_Eventos" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Lista_Eventos_Result)" />
           <FunctionImport Name="getTodosEventos" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.getTodosEventos_Result)" />
+          <FunctionImport Name="getRutas" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.getRutas_Result)" />
         </EntityContainer>
         <ComplexType Name="Carga_Grilla_Listado_Rutas_Tecnicos_Result">
           <Property Type="Int32" Name="EVENTO" Nullable="false" />
@@ -1796,6 +1797,13 @@
           <Property Type="String" Name="TIPO_FALLA" Nullable="true" MaxLength="60" />
           <Property Type="DateTime" Name="FECHA_EVENTO" Nullable="false" Precision="23" />
           <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="60" />
+        </ComplexType>
+        <ComplexType Name="getRutas_Result" />
+        <ComplexType Name="getDetalleEvento_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="N_EVE" Nullable="false" />
+          <Property Type="String" Name="DESCRIPCIÓN" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="FECHA" Nullable="true" Precision="23" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2138,10 +2146,11 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Sp_Carga_Grilla_Detalles_Eventos" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Carga_Grilla_Detalles_Eventos">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.Sp_Carga_Grilla_Detalles_Eventos_Result">
-                <ScalarProperty Name="NRO" ColumnName="NRO" />
+          <FunctionImportMapping FunctionImportName="getDetalleEvento" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Carga_Grilla_Detalles_Eventos">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.getDetalleEvento_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="N_EVE" ColumnName="N_EVE" />
                 <ScalarProperty Name="DESCRIPCIÓN" ColumnName="DESCRIPCIÓN" />
                 <ScalarProperty Name="FECHA" ColumnName="FECHA" />
               </ComplexTypeMapping>
@@ -2299,6 +2308,11 @@
                 <ScalarProperty Name="FECHA_EVENTO" ColumnName="FECHA EVENTO" />
                 <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
               </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getRutas" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Envia_Lat_Lng_App">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.getRutas_Result" />
             </ResultMapping>
           </FunctionImportMapping>
         </EntityContainerMapping>

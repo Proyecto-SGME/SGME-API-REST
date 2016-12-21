@@ -29,17 +29,31 @@ namespace api_rest_sgmw.Controllers
             return db.getTodosEventos();
         }
 
+        //// GET: api/EVENTOS/5
+        //[ResponseType(typeof(EVENTOS))]
+        //public IHttpActionResult GetEVENTOS(int id)
+        //{
+        //    EVENTOS eVENTOS = db.EVENTOS.Find(id);
+        //    if (eVENTOS == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return Ok(eVENTOS);
+        //}
+
         // GET: api/EVENTOS/5
-        [ResponseType(typeof(EVENTOS))]
+        [ResponseType(typeof(getDetalleEvento_Result))]
         public IHttpActionResult GetEVENTOS(int id)
         {
-            EVENTOS eVENTOS = db.EVENTOS.Find(id);
-            if (eVENTOS == null)
+            //EVENTOS eVENTOS = db.EVENTOS.Find(id);
+            ObjectResult<getDetalleEvento_Result> eventos = db.getDetalleEvento(id);
+            if (eventos == null)
             {
                 return NotFound();
             }
 
-            return Ok(eVENTOS);
+            return Ok(eventos);
         }
 
         // PUT: api/EVENTOS/5

@@ -294,7 +294,13 @@
     <Compile Include="EVENTOS.cs">
       <DependentUpon>ModeloSGME.tt</DependentUpon>
     </Compile>
+    <Compile Include="getDetalleEvento_Result.cs">
+      <DependentUpon>ModeloSGME.tt</DependentUpon>
+    </Compile>
     <Compile Include="getEventos_Result.cs">
+      <DependentUpon>ModeloSGME.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getRutas_Result.cs">
       <DependentUpon>ModeloSGME.tt</DependentUpon>
     </Compile>
     <Compile Include="getTodosEventos_Result.cs">
@@ -456,7 +462,7 @@
       <DependentUpon>ModeloSGME.edmx</DependentUpon>
     </Content>
     <Content Include="ClassDiagram1.cd" />
-    <None Include="Properties\PublishProfiles\api-rest.pubxml" />
+    <None Include="Properties\PublishProfiles\api.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

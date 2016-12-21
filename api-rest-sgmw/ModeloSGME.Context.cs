@@ -94,13 +94,13 @@ namespace api_rest_sgmw
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_Carga_Combo_Box_Result>("Sp_Carga_Combo_Box", flagParameter, ddlFlagParameter);
         }
     
-        public virtual ObjectResult<Sp_Carga_Grilla_Detalles_Eventos_Result> Sp_Carga_Grilla_Detalles_Eventos(Nullable<int> id_evento)
+        public virtual ObjectResult<getDetalleEvento_Result> getDetalleEvento(Nullable<int> id_evento)
         {
             var id_eventoParameter = id_evento.HasValue ?
                 new ObjectParameter("id_evento", id_evento) :
                 new ObjectParameter("id_evento", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_Carga_Grilla_Detalles_Eventos_Result>("Sp_Carga_Grilla_Detalles_Eventos", id_eventoParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getDetalleEvento_Result>("getDetalleEvento", id_eventoParameter);
         }
     
         public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
@@ -656,6 +656,11 @@ namespace api_rest_sgmw
         public virtual ObjectResult<getTodosEventos_Result> getTodosEventos()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getTodosEventos_Result>("getTodosEventos");
+        }
+    
+        public virtual ObjectResult<getRutas_Result> getRutas()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getRutas_Result>("getRutas");
         }
     }
 }
