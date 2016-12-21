@@ -14,20 +14,21 @@ namespace api_rest_sgmw
     
     public partial class TIPOS_USUARIOS
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TIPOS_USUARIOS()
-        {
-            this.HISTORIAL_USUARIOS = new HashSet<HISTORIAL_USUARIOS>();
-        }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        //public TIPOS_USUARIOS()
+        //{
+        //    this.HISTORIAL_USUARIOS = new HashSet<HISTORIAL_USUARIOS>();
+        //}
     
-        public int TIPO_USUARIO_ID { get; set; }
-        public string TIPO_USUARIO_DESCRIPCION { get; set; }
-        public int USER_ID { get; set; }
-        public Nullable<System.DateTime> CREATED { get; set; }
-        public Nullable<System.DateTime> MODIFIED { get; set; }
-        public Nullable<bool> DELETED { get; set; }
+        //public int TIPO_USUARIO_ID { get; set; }
+        //public string TIPO_USUARIO_DESCRIPCION { get; set; }
+        //public int USER_ID { get; set; }
+        //public Nullable<System.DateTime> CREATED { get; set; }
+        //public Nullable<System.DateTime> MODIFIED { get; set; }
+        //public Nullable<bool> DELETED { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HISTORIAL_USUARIOS> HISTORIAL_USUARIOS { get; set; }
     }
+
 }

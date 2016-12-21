@@ -57,10 +57,10 @@ namespace api_rest_sgmw.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != tIPOS_USUARIOS.TIPO_USUARIO_ID)
-            {
-                return BadRequest();
-            }
+            //if (id != tIPOS_USUARIOS.TIPO_USUARIO_ID)
+            //{
+            //    return BadRequest();
+            //}
 
             db.Entry(tIPOS_USUARIOS).State = EntityState.Modified;
 
