@@ -18,9 +18,15 @@ namespace api_rest_sgmw.Controllers
         private DB_9DAB36_LABORATORIOEntities db = new DB_9DAB36_LABORATORIOEntities();
 
         // GET: api/EVENTOS
-        public IQueryable<EVENTOS> GetEVENTOS()
+        //public IQueryable<EVENTOS> GetEVENTOS()
+        //{
+        //    return db.EVENTOS;
+        //}
+
+        // GET: api/EVENTOS
+        public ObjectResult<getTodosEventos_Result> GetEVENTOS()
         {
-            return db.EVENTOS;
+            return db.getTodosEventos();
         }
 
         // GET: api/EVENTOS/5

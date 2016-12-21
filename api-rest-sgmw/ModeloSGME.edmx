@@ -552,12 +552,21 @@
         <Function Name="Carga_Grilla_Listado_Rutas_Tecnicos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_tecnico" Type="int" Mode="In" />
         </Function>
+        <Function Name="CargaGridListarUsuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="version" Type="int" Mode="In" />
           <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="Sp_Busca_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="rut" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_Cambia_Clave_Usuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="rut" Type="int" Mode="In" />
+          <Parameter Name="pw" Type="varchar" Mode="In" />
+          <Parameter Name="id_user" Type="int" Mode="In" />
         </Function>
         <Function Name="Sp_Carga_Combo_Box" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Flag" Type="int" Mode="In" />
@@ -566,6 +575,9 @@
         <Function Name="Sp_Carga_Grilla_Detalles_Eventos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_evento" Type="int" Mode="In" />
         </Function>
+        <Function Name="Sp_Carga_Grilla_Horarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_Carga_Grilla_Listado_Tipos_Usuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_Carga_Grilla_Ubicaciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -576,6 +588,9 @@
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
+        <Function Name="Sp_Envia_Lat_Lng_App" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuario_rut" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -583,6 +598,18 @@
         <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_Lista_Eventos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_Lista_Eventos_Estado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_evento" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_Obtiene_Usuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_Registro_Agrega_Dato_Cliete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="rut_cliente" Type="int" Mode="In" />
+          <Parameter Name="datos_cliente_celular" Type="varchar" Mode="In" />
+          <Parameter Name="datos_cliente_fono" Type="varchar" Mode="In" />
+          <Parameter Name="datos_cliente_email" Type="varchar" Mode="In" />
+          <Parameter Name="id_user" Type="int" Mode="In" />
         </Function>
         <Function Name="Sp_Registro_Cierra_Evento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_evento" Type="int" Mode="In" />
@@ -635,6 +662,23 @@
           <Parameter Name="id_user" Type="int" Mode="In" />
           <Parameter Name="numero_evento" Type="int" Mode="InOut" />
         </Function>
+        <Function Name="Sp_Registro_Horarios_Ubicaciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="hora_apertura" Type="time" Mode="In" />
+          <Parameter Name="hora_cierre" Type="time" Mode="In" />
+          <Parameter Name="id_user" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_Registro_Instalacion_Maquina" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ubicacion_id" Type="int" Mode="In" />
+          <Parameter Name="maquina_id" Type="int" Mode="In" />
+          <Parameter Name="descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="id_user" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_Registro_Maquinas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="maquina_serie" Type="varchar" Mode="In" />
+          <Parameter Name="modelo_id" Type="int" Mode="In" />
+          <Parameter Name="maquina_FechaFabri" Type="date" Mode="In" />
+          <Parameter Name="id_user" Type="int" Mode="In" />
+        </Function>
         <Function Name="Sp_Registro_Marcas_Equipos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="descripcion" Type="varchar" Mode="In" />
           <Parameter Name="id_user" Type="int" Mode="In" />
@@ -651,6 +695,12 @@
         </Function>
         <Function Name="Sp_Registro_Tipos_Usuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="id_user" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_Registro_Ubicacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="direccion_id" Type="int" Mode="In" />
+          <Parameter Name="ubicacion_descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="id_horario" Type="int" Mode="In" />
           <Parameter Name="id_user" Type="int" Mode="In" />
         </Function>
         <Function Name="Sp_Registro_Usuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -1587,6 +1637,60 @@
             <End Role="MARCAS" EntitySet="MARCAS" />
             <End Role="MODELOS" EntitySet="MODELOS" />
           </AssociationSet>
+          <FunctionImport Name="CargaGridListarUsuarios" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.CargaGridListarUsuarios_Result)" />
+          <FunctionImport Name="Sp_Busca_Cliente" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Busca_Cliente_Result)">
+          <Parameter Name="rut" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Cambia_Clave_Usuarios">
+            <Parameter Name="rut" Mode="In" Type="Int32" />
+            <Parameter Name="pw" Mode="In" Type="String" />
+            <Parameter Name="id_user" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Carga_Grilla_Horarios" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Carga_Grilla_Horarios_Result)" />
+          <FunctionImport Name="Sp_Carga_Grilla_Listado_Tipos_Usuarios" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Carga_Grilla_Listado_Tipos_Usuarios_Result)" />
+          <FunctionImport Name="Sp_Carga_Grilla_Ubicaciones" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Carga_Grilla_Ubicaciones_Result)" />
+          <FunctionImport Name="Sp_Envia_Lat_Lng_App" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Envia_Lat_Lng_App_Result)">
+          <Parameter Name="usuario_rut" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Lista_Eventos_Estado" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Lista_Eventos_Estado_Result)">
+          <Parameter Name="id_evento" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Obtiene_Usuarios" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Obtiene_Usuarios_Result)" />
+          <FunctionImport Name="Sp_Registro_Agrega_Dato_Cliete">
+            <Parameter Name="rut_cliente" Mode="In" Type="Int32" />
+            <Parameter Name="datos_cliente_celular" Mode="In" Type="String" />
+            <Parameter Name="datos_cliente_fono" Mode="In" Type="String" />
+            <Parameter Name="datos_cliente_email" Mode="In" Type="String" />
+            <Parameter Name="id_user" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Registro_Horarios_Ubicaciones">
+            <Parameter Name="hora_apertura" Mode="In" Type="Time" />
+            <Parameter Name="hora_cierre" Mode="In" Type="Time" />
+            <Parameter Name="id_user" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Registro_Instalacion_Maquina">
+            <Parameter Name="ubicacion_id" Mode="In" Type="Int32" />
+            <Parameter Name="maquina_id" Mode="In" Type="Int32" />
+            <Parameter Name="descripcion" Mode="In" Type="String" />
+            <Parameter Name="id_user" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Registro_Maquinas">
+            <Parameter Name="maquina_serie" Mode="In" Type="String" />
+            <Parameter Name="modelo_id" Mode="In" Type="Int32" />
+            <Parameter Name="maquina_FechaFabri" Mode="In" Type="DateTime" />
+            <Parameter Name="id_user" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Registro_Ubicacion">
+            <Parameter Name="direccion_id" Mode="In" Type="Int32" />
+            <Parameter Name="ubicacion_descripcion" Mode="In" Type="String" />
+            <Parameter Name="id_horario" Mode="In" Type="Int32" />
+            <Parameter Name="id_user" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getEventos" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.getEventos_Result)">
+          <Parameter Name="id_evento" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Lista_Eventos" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.Sp_Lista_Eventos_Result)" />
+          <FunctionImport Name="getTodosEventos" ReturnType="Collection(DB_9DAB36_LABORATORIOModel.getTodosEventos_Result)" />
         </EntityContainer>
         <ComplexType Name="Carga_Grilla_Listado_Rutas_Tecnicos_Result">
           <Property Type="Int32" Name="EVENTO" Nullable="false" />
@@ -1627,6 +1731,75 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="CargaGridListarUsuarios_Result">
+          <Property Type="String" Name="USUARIO" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="182" />
+          <Property Type="DateTime" Name="FECHA_DE_NACIMIENTO" Nullable="false" Precision="23" />
+          <Property Type="String" Name="TIPO_USUARIO" Nullable="false" MaxLength="60" />
+        </ComplexType>
+        <ComplexType Name="Sp_Busca_Cliente_Result">
+          <Property Type="Int32" Name="rut" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="182" />
+        </ComplexType>
+        <ComplexType Name="Sp_Carga_Grilla_Horarios_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Time" Name="HORA_APERTURA" Nullable="true" />
+          <Property Type="Time" Name="HORA_CIERRE" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Sp_Carga_Grilla_Listado_Tipos_Usuarios_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="DESCRIPCIÓN" Nullable="false" MaxLength="60" />
+        </ComplexType>
+        <ComplexType Name="Sp_Carga_Grilla_Ubicaciones_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="DESCRIPCIÓN" Nullable="true" MaxLength="500" />
+          <Property Type="Time" Name="HORARIO_APERTURA" Nullable="true" />
+          <Property Type="Time" Name="HORARIO_CIERRE" Nullable="true" />
+          <Property Type="String" Name="DIRECCIÓN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="COMUNA" Nullable="true" MaxLength="60" />
+        </ComplexType>
+        <ComplexType Name="Sp_Envia_Lat_Lng_App_Result">
+          <Property Type="Int32" Name="ruta_id" Nullable="false" />
+          <Property Type="Double" Name="DIRECCION_LATITUD" Nullable="true" />
+          <Property Type="Double" Name="DIRECCION_LONGITUD" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Sp_Lista_Eventos_Estado_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NOMBRE_CLIENTE" Nullable="true" MaxLength="182" />
+          <Property Type="String" Name="MAQUINA" Nullable="true" MaxLength="82" />
+          <Property Type="String" Name="TIPO_FALLA" Nullable="true" MaxLength="60" />
+          <Property Type="DateTime" Name="FECHA_EVENTO" Nullable="false" Precision="23" />
+          <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="60" />
+        </ComplexType>
+        <ComplexType Name="Sp_Obtiene_Usuarios_Result">
+          <Property Type="String" Name="us" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="pw" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="id_tipo" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getEventos_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NOMBRE_CLIENTE" Nullable="true" MaxLength="182" />
+          <Property Type="String" Name="MAQUINA" Nullable="true" MaxLength="82" />
+          <Property Type="String" Name="TIPO_FALLA" Nullable="true" MaxLength="60" />
+          <Property Type="DateTime" Name="FECHA_EVENTO" Nullable="false" Precision="23" />
+          <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="60" />
+        </ComplexType>
+        <ComplexType Name="Sp_Lista_Eventos_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NOMBRE_CLIENTE" Nullable="true" MaxLength="182" />
+          <Property Type="String" Name="MAQUINA" Nullable="true" MaxLength="82" />
+          <Property Type="String" Name="TIPO_FALLA" Nullable="true" MaxLength="60" />
+          <Property Type="DateTime" Name="FECHA_EVENTO" Nullable="false" Precision="23" />
+          <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="60" />
+        </ComplexType>
+        <ComplexType Name="getTodosEventos_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NOMBRE_CLIENTE" Nullable="true" MaxLength="182" />
+          <Property Type="String" Name="MAQUINA" Nullable="true" MaxLength="82" />
+          <Property Type="String" Name="TIPO_FALLA" Nullable="true" MaxLength="60" />
+          <Property Type="DateTime" Name="FECHA_EVENTO" Nullable="false" Precision="23" />
+          <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="60" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2012,6 +2185,125 @@
           <FunctionImportMapping FunctionImportName="Sp_Registro_Usuarios" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Registro_Usuarios" />
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DB_9DAB36_LABORATORIOModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DB_9DAB36_LABORATORIOModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="CargaGridListarUsuarios" FunctionName="DB_9DAB36_LABORATORIOModel.Store.CargaGridListarUsuarios">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.CargaGridListarUsuarios_Result">
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="FECHA_DE_NACIMIENTO" ColumnName="FECHA DE NACIMIENTO" />
+                <ScalarProperty Name="TIPO_USUARIO" ColumnName="TIPO USUARIO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Busca_Cliente" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Busca_Cliente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.Sp_Busca_Cliente_Result">
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Cambia_Clave_Usuarios" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Cambia_Clave_Usuarios" />
+          <FunctionImportMapping FunctionImportName="Sp_Carga_Grilla_Horarios" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Carga_Grilla_Horarios">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.Sp_Carga_Grilla_Horarios_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HORA_APERTURA" ColumnName="HORA APERTURA" />
+                <ScalarProperty Name="HORA_CIERRE" ColumnName="HORA CIERRE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Carga_Grilla_Listado_Tipos_Usuarios" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Carga_Grilla_Listado_Tipos_Usuarios">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.Sp_Carga_Grilla_Listado_Tipos_Usuarios_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRIPCIÓN" ColumnName="DESCRIPCIÓN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Carga_Grilla_Ubicaciones" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Carga_Grilla_Ubicaciones">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.Sp_Carga_Grilla_Ubicaciones_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRIPCIÓN" ColumnName="DESCRIPCIÓN" />
+                <ScalarProperty Name="HORARIO_APERTURA" ColumnName="HORARIO APERTURA" />
+                <ScalarProperty Name="HORARIO_CIERRE" ColumnName="HORARIO CIERRE" />
+                <ScalarProperty Name="DIRECCIÓN" ColumnName="DIRECCIÓN" />
+                <ScalarProperty Name="COMUNA" ColumnName="COMUNA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Envia_Lat_Lng_App" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Envia_Lat_Lng_App">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.Sp_Envia_Lat_Lng_App_Result">
+                <ScalarProperty Name="ruta_id" ColumnName="ruta_id" />
+                <ScalarProperty Name="DIRECCION_LATITUD" ColumnName="DIRECCION_LATITUD" />
+                <ScalarProperty Name="DIRECCION_LONGITUD" ColumnName="DIRECCION_LONGITUD" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Lista_Eventos_Estado" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Lista_Eventos_Estado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.Sp_Lista_Eventos_Estado_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE_CLIENTE" ColumnName="NOMBRE CLIENTE" />
+                <ScalarProperty Name="MAQUINA" ColumnName="MAQUINA" />
+                <ScalarProperty Name="TIPO_FALLA" ColumnName="TIPO FALLA" />
+                <ScalarProperty Name="FECHA_EVENTO" ColumnName="FECHA EVENTO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Obtiene_Usuarios" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Obtiene_Usuarios">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.Sp_Obtiene_Usuarios_Result">
+                <ScalarProperty Name="us" ColumnName="us" />
+                <ScalarProperty Name="pw" ColumnName="pw" />
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Registro_Agrega_Dato_Cliete" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Registro_Agrega_Dato_Cliete" />
+          <FunctionImportMapping FunctionImportName="Sp_Registro_Horarios_Ubicaciones" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Registro_Horarios_Ubicaciones" />
+          <FunctionImportMapping FunctionImportName="Sp_Registro_Instalacion_Maquina" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Registro_Instalacion_Maquina" />
+          <FunctionImportMapping FunctionImportName="Sp_Registro_Maquinas" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Registro_Maquinas" />
+          <FunctionImportMapping FunctionImportName="Sp_Registro_Ubicacion" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Registro_Ubicacion" />
+          <FunctionImportMapping FunctionImportName="getEventos" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Lista_Eventos_Estado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.getEventos_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE_CLIENTE" ColumnName="NOMBRE CLIENTE" />
+                <ScalarProperty Name="MAQUINA" ColumnName="MAQUINA" />
+                <ScalarProperty Name="TIPO_FALLA" ColumnName="TIPO FALLA" />
+                <ScalarProperty Name="FECHA_EVENTO" ColumnName="FECHA EVENTO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Lista_Eventos" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Lista_Eventos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.Sp_Lista_Eventos_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE_CLIENTE" ColumnName="NOMBRE CLIENTE" />
+                <ScalarProperty Name="MAQUINA" ColumnName="MAQUINA" />
+                <ScalarProperty Name="TIPO_FALLA" ColumnName="TIPO FALLA" />
+                <ScalarProperty Name="FECHA_EVENTO" ColumnName="FECHA EVENTO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getTodosEventos" FunctionName="DB_9DAB36_LABORATORIOModel.Store.Sp_Lista_Eventos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_9DAB36_LABORATORIOModel.getTodosEventos_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE_CLIENTE" ColumnName="NOMBRE CLIENTE" />
+                <ScalarProperty Name="MAQUINA" ColumnName="MAQUINA" />
+                <ScalarProperty Name="TIPO_FALLA" ColumnName="TIPO FALLA" />
+                <ScalarProperty Name="FECHA_EVENTO" ColumnName="FECHA EVENTO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

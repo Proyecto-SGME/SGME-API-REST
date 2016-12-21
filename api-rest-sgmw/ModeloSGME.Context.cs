@@ -468,5 +468,198 @@ namespace api_rest_sgmw
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        public virtual ObjectResult<CargaGridListarUsuarios_Result> CargaGridListarUsuarios()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CargaGridListarUsuarios_Result>("CargaGridListarUsuarios");
+        }
+    
+        public virtual ObjectResult<Sp_Busca_Cliente_Result> Sp_Busca_Cliente(Nullable<int> rut)
+        {
+            var rutParameter = rut.HasValue ?
+                new ObjectParameter("rut", rut) :
+                new ObjectParameter("rut", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_Busca_Cliente_Result>("Sp_Busca_Cliente", rutParameter);
+        }
+    
+        public virtual int Sp_Cambia_Clave_Usuarios(Nullable<int> rut, string pw, Nullable<int> id_user)
+        {
+            var rutParameter = rut.HasValue ?
+                new ObjectParameter("rut", rut) :
+                new ObjectParameter("rut", typeof(int));
+    
+            var pwParameter = pw != null ?
+                new ObjectParameter("pw", pw) :
+                new ObjectParameter("pw", typeof(string));
+    
+            var id_userParameter = id_user.HasValue ?
+                new ObjectParameter("id_user", id_user) :
+                new ObjectParameter("id_user", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_Cambia_Clave_Usuarios", rutParameter, pwParameter, id_userParameter);
+        }
+    
+        public virtual ObjectResult<Sp_Carga_Grilla_Horarios_Result> Sp_Carga_Grilla_Horarios()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_Carga_Grilla_Horarios_Result>("Sp_Carga_Grilla_Horarios");
+        }
+    
+        public virtual ObjectResult<Sp_Carga_Grilla_Listado_Tipos_Usuarios_Result> Sp_Carga_Grilla_Listado_Tipos_Usuarios()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_Carga_Grilla_Listado_Tipos_Usuarios_Result>("Sp_Carga_Grilla_Listado_Tipos_Usuarios");
+        }
+    
+        public virtual ObjectResult<Sp_Carga_Grilla_Ubicaciones_Result> Sp_Carga_Grilla_Ubicaciones()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_Carga_Grilla_Ubicaciones_Result>("Sp_Carga_Grilla_Ubicaciones");
+        }
+    
+        public virtual ObjectResult<Sp_Envia_Lat_Lng_App_Result> Sp_Envia_Lat_Lng_App(Nullable<int> usuario_rut)
+        {
+            var usuario_rutParameter = usuario_rut.HasValue ?
+                new ObjectParameter("usuario_rut", usuario_rut) :
+                new ObjectParameter("usuario_rut", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_Envia_Lat_Lng_App_Result>("Sp_Envia_Lat_Lng_App", usuario_rutParameter);
+        }
+    
+        public virtual ObjectResult<Sp_Lista_Eventos_Estado_Result> Sp_Lista_Eventos_Estado(Nullable<int> id_evento)
+        {
+            var id_eventoParameter = id_evento.HasValue ?
+                new ObjectParameter("id_evento", id_evento) :
+                new ObjectParameter("id_evento", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_Lista_Eventos_Estado_Result>("Sp_Lista_Eventos_Estado", id_eventoParameter);
+        }
+    
+        public virtual ObjectResult<Sp_Obtiene_Usuarios_Result> Sp_Obtiene_Usuarios()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_Obtiene_Usuarios_Result>("Sp_Obtiene_Usuarios");
+        }
+    
+        public virtual int Sp_Registro_Agrega_Dato_Cliete(Nullable<int> rut_cliente, string datos_cliente_celular, string datos_cliente_fono, string datos_cliente_email, Nullable<int> id_user)
+        {
+            var rut_clienteParameter = rut_cliente.HasValue ?
+                new ObjectParameter("rut_cliente", rut_cliente) :
+                new ObjectParameter("rut_cliente", typeof(int));
+    
+            var datos_cliente_celularParameter = datos_cliente_celular != null ?
+                new ObjectParameter("datos_cliente_celular", datos_cliente_celular) :
+                new ObjectParameter("datos_cliente_celular", typeof(string));
+    
+            var datos_cliente_fonoParameter = datos_cliente_fono != null ?
+                new ObjectParameter("datos_cliente_fono", datos_cliente_fono) :
+                new ObjectParameter("datos_cliente_fono", typeof(string));
+    
+            var datos_cliente_emailParameter = datos_cliente_email != null ?
+                new ObjectParameter("datos_cliente_email", datos_cliente_email) :
+                new ObjectParameter("datos_cliente_email", typeof(string));
+    
+            var id_userParameter = id_user.HasValue ?
+                new ObjectParameter("id_user", id_user) :
+                new ObjectParameter("id_user", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_Registro_Agrega_Dato_Cliete", rut_clienteParameter, datos_cliente_celularParameter, datos_cliente_fonoParameter, datos_cliente_emailParameter, id_userParameter);
+        }
+    
+        public virtual int Sp_Registro_Horarios_Ubicaciones(Nullable<System.TimeSpan> hora_apertura, Nullable<System.TimeSpan> hora_cierre, Nullable<int> id_user)
+        {
+            var hora_aperturaParameter = hora_apertura.HasValue ?
+                new ObjectParameter("hora_apertura", hora_apertura) :
+                new ObjectParameter("hora_apertura", typeof(System.TimeSpan));
+    
+            var hora_cierreParameter = hora_cierre.HasValue ?
+                new ObjectParameter("hora_cierre", hora_cierre) :
+                new ObjectParameter("hora_cierre", typeof(System.TimeSpan));
+    
+            var id_userParameter = id_user.HasValue ?
+                new ObjectParameter("id_user", id_user) :
+                new ObjectParameter("id_user", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_Registro_Horarios_Ubicaciones", hora_aperturaParameter, hora_cierreParameter, id_userParameter);
+        }
+    
+        public virtual int Sp_Registro_Instalacion_Maquina(Nullable<int> ubicacion_id, Nullable<int> maquina_id, string descripcion, Nullable<int> id_user)
+        {
+            var ubicacion_idParameter = ubicacion_id.HasValue ?
+                new ObjectParameter("ubicacion_id", ubicacion_id) :
+                new ObjectParameter("ubicacion_id", typeof(int));
+    
+            var maquina_idParameter = maquina_id.HasValue ?
+                new ObjectParameter("maquina_id", maquina_id) :
+                new ObjectParameter("maquina_id", typeof(int));
+    
+            var descripcionParameter = descripcion != null ?
+                new ObjectParameter("descripcion", descripcion) :
+                new ObjectParameter("descripcion", typeof(string));
+    
+            var id_userParameter = id_user.HasValue ?
+                new ObjectParameter("id_user", id_user) :
+                new ObjectParameter("id_user", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_Registro_Instalacion_Maquina", ubicacion_idParameter, maquina_idParameter, descripcionParameter, id_userParameter);
+        }
+    
+        public virtual int Sp_Registro_Maquinas(string maquina_serie, Nullable<int> modelo_id, Nullable<System.DateTime> maquina_FechaFabri, Nullable<int> id_user)
+        {
+            var maquina_serieParameter = maquina_serie != null ?
+                new ObjectParameter("maquina_serie", maquina_serie) :
+                new ObjectParameter("maquina_serie", typeof(string));
+    
+            var modelo_idParameter = modelo_id.HasValue ?
+                new ObjectParameter("modelo_id", modelo_id) :
+                new ObjectParameter("modelo_id", typeof(int));
+    
+            var maquina_FechaFabriParameter = maquina_FechaFabri.HasValue ?
+                new ObjectParameter("maquina_FechaFabri", maquina_FechaFabri) :
+                new ObjectParameter("maquina_FechaFabri", typeof(System.DateTime));
+    
+            var id_userParameter = id_user.HasValue ?
+                new ObjectParameter("id_user", id_user) :
+                new ObjectParameter("id_user", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_Registro_Maquinas", maquina_serieParameter, modelo_idParameter, maquina_FechaFabriParameter, id_userParameter);
+        }
+    
+        public virtual int Sp_Registro_Ubicacion(Nullable<int> direccion_id, string ubicacion_descripcion, Nullable<int> id_horario, Nullable<int> id_user)
+        {
+            var direccion_idParameter = direccion_id.HasValue ?
+                new ObjectParameter("direccion_id", direccion_id) :
+                new ObjectParameter("direccion_id", typeof(int));
+    
+            var ubicacion_descripcionParameter = ubicacion_descripcion != null ?
+                new ObjectParameter("ubicacion_descripcion", ubicacion_descripcion) :
+                new ObjectParameter("ubicacion_descripcion", typeof(string));
+    
+            var id_horarioParameter = id_horario.HasValue ?
+                new ObjectParameter("id_horario", id_horario) :
+                new ObjectParameter("id_horario", typeof(int));
+    
+            var id_userParameter = id_user.HasValue ?
+                new ObjectParameter("id_user", id_user) :
+                new ObjectParameter("id_user", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sp_Registro_Ubicacion", direccion_idParameter, ubicacion_descripcionParameter, id_horarioParameter, id_userParameter);
+        }
+    
+        public virtual ObjectResult<getEventos_Result> getEventos(Nullable<int> id_evento)
+        {
+            var id_eventoParameter = id_evento.HasValue ?
+                new ObjectParameter("id_evento", id_evento) :
+                new ObjectParameter("id_evento", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getEventos_Result>("getEventos", id_eventoParameter);
+        }
+    
+        public virtual ObjectResult<Sp_Lista_Eventos_Result> Sp_Lista_Eventos()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_Lista_Eventos_Result>("Sp_Lista_Eventos");
+        }
+    
+        public virtual ObjectResult<getTodosEventos_Result> getTodosEventos()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getTodosEventos_Result>("getTodosEventos");
+        }
     }
 }

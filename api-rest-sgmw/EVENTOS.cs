@@ -11,8 +11,7 @@ namespace api_rest_sgmw
 {
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity.Core.Objects;
-
+    
     public partial class EVENTOS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,12 +20,7 @@ namespace api_rest_sgmw
             this.DETALLES_EVENTOS = new HashSet<DETALLES_EVENTOS>();
             this.RUTAS = new HashSet<RUTAS>();
         }
-
-        public static explicit operator EVENTOS(ObjectResult<Sp_Carga_Grilla_Detalles_Eventos_Result> v)
-        {
-            throw new NotImplementedException();
-        }
-
+    
         public int EVENTO_ID { get; set; }
         public int TIPO_EVENTO_ID { get; set; }
         public int CLIENTE_RUT { get; set; }

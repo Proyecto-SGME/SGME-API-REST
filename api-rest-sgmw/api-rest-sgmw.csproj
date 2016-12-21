@@ -235,6 +235,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="CargaGridListarUsuarios_Result.cs">
+      <DependentUpon>ModeloSGME.tt</DependentUpon>
+    </Compile>
     <Compile Include="Carga_Grilla_Listado_Rutas_Tecnicos_Result.cs">
       <DependentUpon>ModeloSGME.tt</DependentUpon>
     </Compile>
@@ -290,6 +293,12 @@
     <Compile Include="EVENTOS.cs">
       <DependentUpon>ModeloSGME.tt</DependentUpon>
     </Compile>
+    <Compile Include="getEventos_Result.cs">
+      <DependentUpon>ModeloSGME.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getTodosEventos_Result.cs">
+      <DependentUpon>ModeloSGME.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -341,16 +350,40 @@
     <Compile Include="RUTAS.cs">
       <DependentUpon>ModeloSGME.tt</DependentUpon>
     </Compile>
+    <Compile Include="Sp_Busca_Cliente_Result.cs">
+      <DependentUpon>ModeloSGME.tt</DependentUpon>
+    </Compile>
     <Compile Include="Sp_Carga_Combo_Box_Result.cs">
       <DependentUpon>ModeloSGME.tt</DependentUpon>
     </Compile>
     <Compile Include="Sp_Carga_Grilla_Detalles_Eventos_Result.cs">
       <DependentUpon>ModeloSGME.tt</DependentUpon>
     </Compile>
+    <Compile Include="Sp_Carga_Grilla_Horarios_Result.cs">
+      <DependentUpon>ModeloSGME.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sp_Carga_Grilla_Listado_Tipos_Usuarios_Result.cs">
+      <DependentUpon>ModeloSGME.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sp_Carga_Grilla_Ubicaciones_Result.cs">
+      <DependentUpon>ModeloSGME.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sp_Envia_Lat_Lng_App_Result.cs">
+      <DependentUpon>ModeloSGME.tt</DependentUpon>
+    </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>ModeloSGME.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>ModeloSGME.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sp_Lista_Eventos_Estado_Result.cs">
+      <DependentUpon>ModeloSGME.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sp_Lista_Eventos_Result.cs">
+      <DependentUpon>ModeloSGME.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sp_Obtiene_Usuarios_Result.cs">
       <DependentUpon>ModeloSGME.tt</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
@@ -421,6 +454,7 @@
       <DependentUpon>ModeloSGME.edmx</DependentUpon>
     </Content>
     <Content Include="ClassDiagram1.cd" />
+    <None Include="Properties\PublishProfiles\apirest.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
